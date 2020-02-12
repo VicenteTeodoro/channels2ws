@@ -1,0 +1,53 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(rel='stylesheet', href='stylesheets/style.css')
+    title Channel to WebSocket 
+  body
+    ul.tabrow
+      li(class="selected", id='tabChannels')
+        span Channels
+      li(id='tabServer')
+        span Servers
+      li(id='tabTest')
+        span Test 
+
+    #channelContainer
+      span#lblChannel Channel:
+      select#selChannel(name='type')
+    #comContainer(style='display: none;')
+      span#lblPort Port:
+      select#comPort(name='type')
+      span#lblBaudRate Baud Rate:
+      input#baudRate(type='text', name='BaudRate')
+      span#lblDataBits Data Bits:
+      input#dataBits(type='text', name='DataBits')
+      span#lblParity Parity:
+      input#parity(type='text', name='Parity')
+      span#lblStopBits Stop Bits:
+      input#stopBits(type='text', name='SotpBits')
+      span#lblFlowControl Flow Control:
+      input#flowControl(type='text', name='FlowControl')
+    #tcpContainer(style='display:none')
+      span#lblIPAddress IP Address:
+      input#ipAddress(type='text', name='IPAddress')
+      span#lblPort Port:
+      input#tcpPort(type='text', name='TCPPort')
+      div(style='height:123px')
+    #wsContainer(style='display:none;height:242px')
+      span#lblConfigPort Config Access Port:
+      input#configPort
+      span#lblWsPort Channel Access Port:
+      input#wsPort
+      span#lblWsWhiteList Channel Access White List:
+      textarea#whiteList(cols='30', rows='10', style='height:169px;resize:none')
+    #testContainer(style='display:none;height:242px')
+      textarea#testDisplay(cols='30', rows='10', style='height:258px;resize:none')
+      button#testActions Connect
+    br
+    button#update Update
+    script(src='./scripts/wsClient.js')
+    script(src='./scripts/home.js')

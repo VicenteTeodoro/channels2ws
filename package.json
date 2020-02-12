@@ -1,0 +1,38 @@
+{
+ "name": "channel2ws",
+ "version": "1.0.0",
+ "description": "",
+ "bin": "index.js",
+ "main": "index.js",
+ "scripts": {
+  "build": "pkg . --output ./dist/channel2ws.exe --target win & xcopy /e /i /y .\\node_modules\\@serialport .\\dist\\@serialport & xcopy /e /i /y .\\node_modules\\os-service .\\dist\\os-service",
+  "eslint": "node ./node_modules/eslint/bin/eslint.js ./src"
+ },
+ "pkg": {
+  "assets": [
+   "views/**/*",
+   "public/**/*",
+   "node_modules/**/*"
+  ]
+ },
+ "keywords": [],
+ "author": "",
+ "license": "ISC",
+ "dependencies": {
+  "body-parser": "^1.19.0",
+  "cors": "^2.8.5",
+  "express": "^4.17.1",
+  "jade": "^1.11.0",
+  "nib": "^1.1.2",
+  "os-service": "^2.2.0",
+  "pkg": "^4.4.2",
+  "serialport": "^8.0.7",
+  "stylus": "^0.54.7",
+  "ws": "^7.2.1"
+ },
+ "devDependencies": {
+  "eslint": "^6.8.0",
+  "eslint-config-airbnb-base": "^14.0.0",
+  "eslint-plugin-import": "^2.20.1"
+ }
+}
