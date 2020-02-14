@@ -1,8 +1,12 @@
 const path = require('path');
 const fs = require('fs');
 const SerialPort = require('serialport');
-const fileName = path.resolve(process.execPath, '../config.json');
-// const fileName = path.resolve(__dirname, '../config.json');
+let fileName = '';
+if (process.env.DEBUG === undefined) {
+ fileName = path.resolve(process.execPath, '../config.json');
+} else {
+ fileName = path.resolve(__dirname, '../config.json');
+}
 const onChangeCallbacks = [];
 let config = null;
 

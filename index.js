@@ -1,5 +1,10 @@
+const dotenv = require('dotenv');
 const service = require('os-service');
 let index = 0;
+
+if (dotenv) {
+ dotenv.config();
+}
 
 process.argv.forEach((arg, i) => {
  if (arg.indexOf('--add') > -1 || arg.indexOf('--run') > -1 || arg.indexOf('--remove') > -1) {
